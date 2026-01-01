@@ -1,0 +1,34 @@
+curl --request GET \
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/subscribed_apps' \
+  --header 'Authorization: Bearer <Token>' \
+  --header 'Content-Type: application/json' \
+  --data '{}'
+{
+  "multiple_subscriptions": {
+    "summary": "Multiple apps subscribed to WABA",
+    "value": {
+      "data": {
+        "0": {
+          "whatsapp_business_api_data": {
+            "id": "1234567890123456",
+            "name": "Business Messaging App",
+            "link": "https://www.facebook.com/games/?app_id=1234567890123456"
+          }
+        },
+        "1": {
+          "whatsapp_business_api_data": {
+            "id": "2345678901234567",
+            "name": "Customer Support Bot",
+            "link": "https://www.facebook.com/games/?app_id=2345678901234567"
+          }
+        }
+      }
+    }
+  },
+  "no_subscriptions": {
+    "summary": "No apps subscribed to WABA",
+    "value": {
+      "data": []
+    }
+  }
+}
